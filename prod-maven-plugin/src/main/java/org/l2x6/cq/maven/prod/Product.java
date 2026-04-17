@@ -161,7 +161,7 @@ public class Product {
                     Collections.emptyList())).forEach(ignoredTransitiveDependencies::include);
 
             final Set<String> platformOverridesSupportAttributeNames = new LinkedHashSet<>();
-            Optional.of((String) json.get("platformOverridesSupportAttributeName"))
+            Optional.ofNullable((String) json.get("platformOverridesSupportAttributeName"))
                     .ifPresent(platformOverridesSupportAttributeNames::add);
             ((List<String>) json.getOrDefault("platformOverridesSupportAttributeNames", new ArrayList<>()))
                     .forEach(platformOverridesSupportAttributeNames::add);
